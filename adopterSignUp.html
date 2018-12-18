@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body id="signUp">
     <div id="form">
         <h1 class="header">PetSwipe</h1>
@@ -18,12 +20,12 @@
         <form class="signUpForm" @submit.prevent="submit">
             <div>
                 <label for="username">User Name:</label>
-                <input v-model="newUser.user_name_a">
+                <input v-model="newUser.user_name_b">
             </div>
             <div>
                 <label for="password">Password:</label>
-                <input v-model="newUser.user_name_a_pw">
-            </div> 
+                <input v-model="newUser.user_name_b_pw">
+            </div>
             <div>
                 <label for="location">Location:</label>
                 <input v-model="newUser.location_city">
@@ -33,31 +35,41 @@
                 <input type="email" v-model="newUser.contact_email">
             </div>
             <div>
+                <label for="petType" v-model="newUser.pet_type" >Pet Type:</label>
+                <input>
+            </div>
+            <div>
                 <label for="picture">Picture URL:</label>
                 <input v-model="newUser.picture_url">
+            </div>
+            <div>
+                <label for="about" type="text" cols="40" rows="7">About:</label>
+                <textarea class="about" value="text" v-model="newUser.about"></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>
     </div>
     <script>
-        var form = new Vue ({
-            el: "#form",
+        var form = new Vue({
+            el:"#form",
             data: {
                 newUser: {
-                    user_name_a: "",
-                    user_name_a_pw: "",
+                    user_name_b: "",
+                    user_name_b_pw: "",
                     location_city: "",
                     contact_email: "",
-                    picture_url: ""
+                    pet_type: "",
+                    picture_url: "",
+                    about: ""
                 }
-                
             },
             methods: {
                 submit: function () {
-                    fetch("localhos")
+                    console.log(this.newUser)
                 }
             }
         })
     </script>
 </body>
+
 </html>
