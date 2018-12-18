@@ -64,6 +64,7 @@ $desktop: "(min-width: 1024px)";
         }
 
         button {
+            height: 2rem;
             width: 40%;
             padding: .25rem;
             margin: .25rem;
@@ -91,29 +92,45 @@ $desktop: "(min-width: 1024px)";
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #FFFAFA;
-    // background-image: url("https://images.pexels.com/photos/8482/animal-dog-pet-indoors.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-    // background-size: cover;
+
     h1 {
         font-family: $logo;
         color: $primary;
     }
+
     .cardContainer {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         .card {
             border: solid black 1px;
-            height: 50vh;
-            width: 30vw;
-            margin: 3rem;
-            border-radius: 3rem;
+            border-radius: 1rem;
+            margin: 1rem;
 
             img {
-                height: 15rem;
+                height: 10rem;
                 width: auto;
-                border-radius: 2rem;
+                border-radius: 3rem;
             }
         }
     }
+    @media #{$desktop}{
+        .cardContainer {
+            flex-direction: row;
+        }
+
+        .card {
+            width: 35vw;
+            height: 60vh;
+        }
+
+    }
+
+}
+
+/* Adoptee Sign-up */
+
+.adopteeBody {
+    display: flex;
+    text-align: center;
 }
