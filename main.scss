@@ -1,11 +1,11 @@
-$mainBlue: #52dcff;
-$mainOrange: #ff8652;
-$lobster: 'Lobster', cursive;
+$logo: 'Lobster', cursive;
+$primary: #ff0800;
 $SansFont: 'Encode Sans Condensed', sans-serif;
+$desktop: "(min-width: 1024px)";
 
 
 
-
+/* Home Page */ 
 .landingBody {
     height: 100vh;
     width: 100vw;
@@ -20,7 +20,8 @@ $SansFont: 'Encode Sans Condensed', sans-serif;
     #logo {
         font-size: 3rem;
         color: black;
-        font-family: $lobster;
+        font-family: $logo;
+        color: $primary;
     }
 
     button:hover {
@@ -29,14 +30,20 @@ $SansFont: 'Encode Sans Condensed', sans-serif;
 
     .formContainer {
         height: 70%;
-        width: 60vw;
+        width: 130vw;
+        position: relative;
+        bottom: 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-radius: 1rem;
-        position: relative;
-        bottom: 7rem;
+    }
+
+    @media #{$desktop}{
+        .formContainer {
+            width: 90vw;
+        }
     }
 
     #login {
@@ -72,6 +79,41 @@ $SansFont: 'Encode Sans Condensed', sans-serif;
             width: 10rem;
             height: 5rem;
             font-size: 1.5rem;
+        }
+    }
+
+    
+}
+
+
+/*Sign up page */
+.signUp {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFFAFA;
+    // background-image: url("https://images.pexels.com/photos/8482/animal-dog-pet-indoors.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    // background-size: cover;
+    h1 {
+        font-family: $logo;
+        color: $primary;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: row;
+
+        .card {
+            border: solid black 1px;
+            height: 50vh;
+            width: 30vw;
+            margin: 3rem;
+            border-radius: 3rem;
+
+            img {
+                height: 15rem;
+                width: auto;
+                border-radius: 2rem;
+            }
         }
     }
 }
