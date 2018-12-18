@@ -1,0 +1,99 @@
+/* Home Page */
+.landingBody {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-image: url("https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  font-family: "Encode Sans Condensed", sans-serif;
+  text-align: center;
+}
+.landingBody #logo {
+  font-size: 3rem;
+  color: black;
+  font-family: "Lobster", cursive;
+  color: #ff0800;
+}
+.landingBody button:hover {
+  cursor: pointer;
+}
+.landingBody .formContainer {
+  height: 70%;
+  width: 130vw;
+  position: relative;
+  bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+@media (min-width: 1024px) {
+  .landingBody .formContainer {
+    width: 90vw;
+  }
+}
+.landingBody #login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid black 1px;
+  background-color: white;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.landingBody #login input {
+  width: 90%;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+}
+.landingBody #login button {
+  width: 40%;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+}
+.landingBody #signUp {
+  margin: 2rem;
+}
+.landingBody #signUp button {
+  height: 2rem;
+  border-radius: 1rem;
+  width: 10rem;
+  height: 5rem;
+  font-size: 1.5rem;
+}
+
+/*Sign up page */
+.signUp {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #FFFAFA;
+}
+.signUp h1 {
+  font-family: "Lobster", cursive;
+  color: #ff0800;
+}
+.signUp .cardContainer {
+  display: flex;
+  flex-direction: row;
+}
+.signUp .cardContainer .card {
+  border: solid black 1px;
+  height: 50vh;
+  width: 30vw;
+  margin: 3rem;
+  border-radius: 3rem;
+}
+.signUp .cardContainer .card img {
+  height: 15rem;
+  width: auto;
+  border-radius: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */
