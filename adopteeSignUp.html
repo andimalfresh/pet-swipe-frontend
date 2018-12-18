@@ -9,11 +9,60 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-<body class="adopteeBody">
-    <div>
-        <h1 class="logo">Find a home for an animal</h1>
-
+<body>
+    <div id="form">
+        <h1 class="header">PetSwipe</h1>
+        <p>
+            Create an account
+        </p>
+        <form class="signUpForm" @submit.prevent="submit">
+            <div v-for="input in form">
+                <label :for=input>
+                    {{ input.name }}
+                </label>
+                <input v-model="form[input].value">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-    
+    <script>
+        var form = new Vue ({
+            el: "#form",
+            data: {
+                form: [
+                    {
+                        name: "User Name:",
+                        value: ""
+                    },
+                    {
+                        name: "Password:",
+                        value: ""
+                    },
+                    {
+                        name: "Location:",
+                        value: ""
+                        
+                    },
+                    {
+                        name: "Email:",
+                        value: ""
+                        
+                    },
+                    {
+                        name: "Picture URL:",
+                        value: ""
+                        
+                    }
+                ],
+                
+            },
+            methods: {
+                submit: function () {
+                    console.log(this.form)
+                    console.log(this.newProfile.user_name)
+                }
+            }
+        })
+    </script>
 </body>
 </html>
