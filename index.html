@@ -4,31 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>PetSwipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Lobster" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body>
+<body class="landingBody">
     <div class="landing">
         <h1 id="logo">PetSwipe</h1>
         <div class="formContainer">
             <h2>Find your new companion</h2>
             <div id="login">
-                <h3><u>Login</u></h3>
-                <form id="form">
-                    <label for="user">User:</label>
-                    <input name="user">
-                    <label for="password">Password:</label>
-                    <input name="password">
-                    <button v-on:click="submit">Submit</button>
-                </form>
-            </div>
-            <h2>OR:</h2>
-            <div id="signUp">
-                <button>Sign-up!</button>
+                <div>
+                    <h3><u>Login</u></h3>
+                    <form id="form" @submit.prevent="submit">
+                        <label for="user">Username:</label>
+                        <input name="user" type="text" v-model="user.username">
+                        <label for="password">Password:</label>
+                        <input name="password" type="password" v-model="user.password">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div>
+                    <p>OR</p>
+                    <a href="./signUp.html"><button>Sign-up!</button></a>
+                </div>
             </div>
         </div>
     </div>
@@ -36,14 +38,16 @@
 
     <script>
         var form = new Vue({
-            el: "#form",
+            el: "#login",
             data: {
-                user: "",
-                password: ""
+                user: {
+                    username: "",
+                    password: ""
+                }
             },
             methods: {
                 submit: function () {
-                    
+                    alert(this.user)
                 }
             }
         })

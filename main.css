@@ -1,58 +1,59 @@
-body {
+.landingBody {
   height: 100vh;
   width: 100vw;
   display: flex;
+  align-content: center;
   justify-content: center;
-  align-items: center;
-  background-color: #52dcff;
+  background-image: url("https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
   font-family: "Encode Sans Condensed", sans-serif;
+  text-align: center;
 }
-body #logo {
+.landingBody #logo {
   font-size: 3rem;
   color: black;
   font-family: "Lobster", cursive;
-  justify-self: center;
 }
-body button:hover {
+.landingBody button:hover {
   cursor: pointer;
 }
-body .formContainer {
-  border: solid black 1px;
+.landingBody .formContainer {
   height: 70%;
   width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFFAF0;
   border-radius: 1rem;
+  position: relative;
+  bottom: 7rem;
 }
-body #login {
+.landingBody #login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: solid black 1px;
   background-color: white;
   width: 50%;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 1rem;
 }
-body #login input {
+.landingBody #login input {
   width: 90%;
   padding: 0.25rem;
   margin: 0.25rem;
   border-radius: 0.25rem;
 }
-body #login button {
+.landingBody #login button {
   width: 40%;
   padding: 0.25rem;
   margin: 0.25rem;
   border-radius: 0.25rem;
 }
-body #signUp {
+.landingBody #signUp {
   margin: 2rem;
 }
-body #signUp button {
+.landingBody #signUp button {
   height: 2rem;
   border-radius: 1rem;
   width: 10rem;
