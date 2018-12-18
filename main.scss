@@ -2,7 +2,11 @@ $logo: 'Lobster', cursive;
 $primary: #ff0800;
 $SansFont: 'Encode Sans Condensed', sans-serif;
 $desktop: "(min-width: 1024px)";
-
+@mixin head {
+    font-family: $logo;
+    color: $primary;
+    height: 2rem;
+}
 
 
 /* Home Page */ 
@@ -130,7 +134,83 @@ $desktop: "(min-width: 1024px)";
 
 /* Adoptee Sign-up */
 
-.adopteeBody {
-    display: flex;
-    text-align: center;
+body {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   font-family: $SansFont;
+    .header {
+        @include head;
+    }
+
+    p {
+        font-size: 1.25rem;
+        padding-top: 1rem;
+    }
+
+    .signUpForm {
+        border: solid black 1px;
+        border-radius: 1rem;
+        margin: 1rem;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: left;
+        padding: 1rem;
+        width: 80%;
+
+        input{
+            border: solid black 1px;
+            float: right;
+        }
+        
+        button{
+            border: solid black 1px;
+            width: 30vw;
+            height: 2rem;
+            border-radius: 1rem;
+            float: center;
+            background-color: white;
+            align-self: center;
+            font-size: 1rem;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+    }
+
+    @media #{$desktop}{
+        .header {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 2rem;
+        }
+        .signUpForm {
+            width: 60vw;
+            height: 70vh;
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+            label {
+                font-size: 2rem;
+            }
+
+            input {
+                width: 60vw;
+                height: 2rem;
+                margin-right: 0rem;
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 1.5rem;
+                height: 2rem;
+                width: 12vw;
+            }
+        }
+    }
 }
