@@ -1,0 +1,76 @@
+$mainBlue: #52dcff;
+$mainOrange: #ff8652;
+$lobster: 'Lobster', cursive;
+$SansFont: 'Encode Sans Condensed', sans-serif;
+
+
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainBlue;
+    font-family: $SansFont;
+    
+    #logo {
+        font-size: 3rem;
+        color: black;
+        font-family: $lobster;
+        justify-self: center;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .formContainer {
+        border: solid black 1px;
+        height: 70%;
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFAF0;
+        border-radius: 1rem;
+    }
+
+    #login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: solid black 1px;
+        background-color: white;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 1rem;
+    
+        input {
+            width: 90%;
+            padding: .25rem;
+            margin: .25rem;
+            border-radius: .25rem;
+        }
+
+        button {
+            width: 40%;
+            padding: .25rem;
+            margin: .25rem;
+            border-radius: .25rem;
+        }
+    }
+
+    #signUp {
+        margin: 2rem;
+        button {
+            height: 2rem;
+            border-radius: 1rem;
+            width: 10rem;
+            height: 5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
