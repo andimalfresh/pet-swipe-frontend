@@ -69,11 +69,12 @@
   font-size: 1.5rem;
 }
 
-/*Sign up page */
+/*Sign up landing page */
 .signUp {
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: "Encode Sans Condensed", sans-serif;
 }
 .signUp h1 {
   font-family: "Lobster", cursive;
@@ -87,6 +88,7 @@
   border: solid black 1px;
   border-radius: 1rem;
   margin: 1rem;
+  padding: 1rem;
 }
 .signUp .cardContainer .card img {
   height: 10rem;
@@ -103,23 +105,23 @@
   }
 }
 
-/* Adoptee Sign-up */
-body {
+/* Sign-up Pages */
+#signUp {
   display: flex;
   justify-content: center;
   text-align: center;
   font-family: "Encode Sans Condensed", sans-serif;
 }
-body .header {
+#signUp .header {
   font-family: "Lobster", cursive;
   color: #ff0800;
   height: 2rem;
 }
-body p {
+#signUp p {
   font-size: 1.25rem;
   padding-top: 1rem;
 }
-body .signUpForm {
+#signUp .signUpForm {
   border: solid black 1px;
   border-radius: 1rem;
   margin: 1rem;
@@ -131,11 +133,11 @@ body .signUpForm {
   padding: 1rem;
   width: 80%;
 }
-body .signUpForm input {
+#signUp .signUpForm input {
   border: solid black 1px;
   float: right;
 }
-body .signUpForm button {
+#signUp .signUpForm button {
   border: solid black 1px;
   width: 30vw;
   height: 2rem;
@@ -145,35 +147,124 @@ body .signUpForm button {
   align-self: center;
   font-size: 1rem;
 }
-body .signUpForm button:hover {
+#signUp .signUpForm button:hover {
   cursor: pointer;
 }
+#signUp .signUpForm .about {
+  height: 10vh;
+  border: solid black 1px;
+  float: right;
+}
 @media (min-width: 1024px) {
-  body .header {
+  #signUp .header {
     font-size: 3rem;
   }
-  body p {
+  #signUp p {
     font-size: 2rem;
   }
-  body .signUpForm {
+  #signUp .signUpForm {
     width: 60vw;
-    height: 70vh;
+    height: 90vh;
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  body .signUpForm label {
+  #signUp .signUpForm label {
     font-size: 2rem;
   }
-  body .signUpForm input {
+  #signUp .signUpForm input {
     width: 60vw;
     height: 2rem;
     margin-right: 0rem;
     font-size: 1.5rem;
   }
-  body .signUpForm button {
+  #signUp .signUpForm button {
     font-size: 1.5rem;
     height: 2rem;
     width: 12vw;
+  }
+  #signUp .signUpForm .about {
+    height: 10vh;
+    width: 50vw;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Swipe styling */
+#swipe {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+#swipe h1 {
+  font-family: "Lobster", cursive;
+  color: #ff0800;
+}
+#swipe .card {
+  height: 50%;
+  width: 80%;
+  border: solid black 1px;
+  border-radius: 2rem;
+}
+#swipe .card img {
+  border-radius: 2rem 2rem 0rem 0rem;
+  height: 15rem;
+  width: 100%;
+}
+#swipe .buttons {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+#swipe .buttons button {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  font-size: 3rem;
+  border: solid black 1px;
+  background-color: white;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+#swipe .menu {
+  margin-top: 20%;
+  height: 5.5rem;
+  width: 105%;
+  background-color: gray;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+#swipe .menu .logo {
+  margin-top: 1rem;
+  background-color: white;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  border-radius: 1.5rem;
+}
+#swipe .menu .logo button {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+@media (min-width: 1024px) {
+  #swipe h1 {
+    font-size: 3rem;
+  }
+  #swipe .card {
+    height: 65vh;
+    width: 50%;
+    font-size: 2rem;
+  }
+  #swipe .card img {
+    height: 80%;
   }
 }
 
