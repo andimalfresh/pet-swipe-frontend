@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Lobster" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="adoptee">
+        <h1>PetSwipe</h1>
+        <div class="currentPets" v-if="newPet">
+            <h2>Your Pets:</h2>
+            <div class="list">
+
+            </div>
+            <button v-on:click="addForm">Add a pet</button>
+        </div>
+        <div v-else>
+            <div class="back">
+                <button v-on:click="addForm">X</button>
+                <h2>Add a Listing:</h2>
+            </div>
+            <form class="petForm">
+                <label for="petName">Pet Name:</label>
+                <input for="petName">
+                <label for="species">Species:</label>
+                <input for="species">
+                <label for="petGender">Pet Gender:</label>
+                <input for="petGender">
+                <label for="petAge">Pet Age:</label>
+                <input for="petAge">
+                <label for="preferences">Preferences:</label>
+                <input for="preferences">
+                <label for="coatLength">Coat Length:</label>
+                <input for="coatLength">
+                <label for="petSize">Pet Size:</label>
+                <input for="petSize">
+                <label for="pcitureURL">Picture URL:</label>
+                <input for="pictureUrl">
+                <div class="checkboxes">
+                    <div>
+                        <label for="houseTrained">House Trained:</label>
+                        <label for="vaccinations">Vaccinations:</label>
+                        <label for="spayed">Spayed/Neutured:</label>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <input type="checkbox">
+                        <input type="checkbox">
+                    </div>
+                </div>
+                <button type="submit">Add!</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var adoptee = new Vue({
+            el: "#adoptee",
+            data: {
+                newPet: true,
+                newPetInfo: {
+                    
+                }
+            },
+            methods: {
+                addForm: function () {
+                    this.newPet = !this.newPet
+                    console.log(this.newPet)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
