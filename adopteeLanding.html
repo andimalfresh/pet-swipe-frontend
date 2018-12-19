@@ -90,8 +90,9 @@
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify(this.newPetInfo)
+                        .then(window.location = "./adopteeLanding.html")
                     })
-                    console.log(this.newPetInfo)
+                    
                 }
             }
         })
