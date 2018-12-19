@@ -15,7 +15,7 @@
     <div id="form">
         <h1 class="header">PetSwipe</h1>
         <p>
-            Create an account
+            New Adopter
         </p>
         <form class="signUpForm" @submit.prevent="submit">
             <div>
@@ -35,8 +35,8 @@
                 <input type="email" v-model="newUser.contact_email">
             </div>
             <div>
-                <label for="petType" v-model="newUser.pet_type">Pet Type:</label>
-                <input>
+                <label for="petType">Pet Type:</label>
+                <input v-model="newUser.pet_type">
             </div>
             <div>
                 <label for="picture">Picture URL:</label>

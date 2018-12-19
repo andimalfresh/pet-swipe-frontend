@@ -280,7 +280,7 @@ $desktop: "(min-width: 1024px)";
         margin-top: 20%;
         height: 5.5rem;
         width: 105%;
-        background-color: gray;
+        background-color: $primary;
         display: flex;
         justify-content: space-evenly;
         flex-direction: row;
