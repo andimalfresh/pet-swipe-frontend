@@ -54,7 +54,13 @@
             },
             methods: {
                 submit: function () {
-                    fetch("localhos")
+                    fetch("https://petswipedb.herokuapp.com/users_a", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(this.newUser)
+                    })
                 }
             }
         })

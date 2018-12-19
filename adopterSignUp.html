@@ -35,7 +35,7 @@
                 <input type="email" v-model="newUser.contact_email">
             </div>
             <div>
-                <label for="petType" v-model="newUser.pet_type" >Pet Type:</label>
+                <label for="petType" v-model="newUser.pet_type">Pet Type:</label>
                 <input>
             </div>
             <div>
@@ -51,7 +51,7 @@
     </div>
     <script>
         var form = new Vue({
-            el:"#form",
+            el: "#form",
             data: {
                 newUser: {
                     user_name_b: "",
@@ -65,7 +65,13 @@
             },
             methods: {
                 submit: function () {
-                    console.log(this.newUser)
+                    fetch("https://petswipedb.herokuapp.com/users_b", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(this.newUser)
+                    })
                 }
             }
         })
