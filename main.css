@@ -329,7 +329,32 @@
 #adoptee .petForm button {
   width: 20vw;
   margin: 0.2rem;
+  margin-top: 1rem;
   margin-left: 37%;
+  font-size: 1rem;
+}
+@media (min-width: 1024px) {
+  #adoptee .back button {
+    width: 3rem;
+  }
+  #adoptee .petForm {
+    margin-top: 0rem;
+    height: 80vh;
+    width: 60vw;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding-left: 5rem;
+  }
+  #adoptee .petForm input {
+    height: 2rem;
+    width: 50vw;
+    font-size: 1.5rem;
+  }
+  #adoptee .petForm .checkboxes input {
+    height: 1rem;
+    margin-left: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
