@@ -15,7 +15,7 @@
         <p>
             New Adoptee:
         </p>
-        <form class="signUpForm" @submit.prevent="submit">
+        <form class="signUpForm"  @submit.prevent="submit">
             <div>
                 <label for="username">User Name:</label>
                 <input v-model="newUser.user_name_a">
@@ -61,6 +61,7 @@
                         },
                         body: JSON.stringify(this.newUser)
                     })
+                    .then(()=> window.location = "./adopteeLanding.html")
                 }
             }
         })

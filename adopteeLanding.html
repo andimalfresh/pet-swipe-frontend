@@ -16,8 +16,8 @@
         <h1>PetSwipe</h1>
         <div class="currentPets" v-if="newPet">
             <h2>Your Pets:</h2>
-            <div class="list">
-
+            <div class="list" v-if="petList.length > 0">
+                <h3 v-for="pet in petList">{{pet.pet_name}}</h3>
             </div>
             <button v-on:click="addForm">Add a pet</button>
         </div>
@@ -64,6 +64,7 @@
         var adoptee = new Vue({
             el: "#adoptee",
             data: {
+                petList: [],
                 newPet: true,
                 newPetInfo: {
                     pet_name: "",
@@ -85,13 +86,15 @@
                 },
                 submit: function () {
                     fetch("https://petswipedb.herokuapp.com/pet_info", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(this.newPetInfo)
-                    })
-                    console.log(this.newPetInfo)
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(this.newPetInfo)
+                        })
+                        .then(() => this.newPet = !this.newPet)
+                        .then(() => window.location = "./adopteeLanding.html")
+
                 }
             }
         })
