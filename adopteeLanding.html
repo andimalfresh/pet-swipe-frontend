@@ -26,23 +26,23 @@
                 <button v-on:click="addForm">X</button>
                 <h2>Add a Listing:</h2>
             </div>
-            <form class="petForm">
+            <form class="petForm" @submit.prevent="submit">
                 <label for="petName">Pet Name:</label>
-                <input for="petName">
+                <input for="petName" v-model="newPetInfo.pet_name">
                 <label for="species">Species:</label>
-                <input for="species">
+                <input for="species" v-model="newPetInfo.species">
                 <label for="petGender">Pet Gender:</label>
-                <input for="petGender">
+                <input for="petGender" v-model="newPetInfo.pet_gender">
                 <label for="petAge">Pet Age:</label>
-                <input for="petAge">
+                <input for="petAge" v-model="newPetInfo.pet_age">
                 <label for="preferences">Preferences:</label>
-                <input for="preferences">
+                <input for="preferences" v-model="newPetInfo.preferences">
                 <label for="coatLength">Coat Length:</label>
-                <input for="coatLength">
+                <input for="coatLength" v-model="newPetInfo.coat_length">
                 <label for="petSize">Pet Size:</label>
-                <input for="petSize">
+                <input for="petSize" v-model="newPetInfo.pet_size">
                 <label for="pcitureURL">Picture URL:</label>
-                <input for="pictureUrl">
+                <input for="pictureUrl" v-model="newPetInfo.pet_picture_url">
                 <div class="checkboxes">
                     <div>
                         <label for="houseTrained">House Trained:</label>
@@ -50,12 +50,12 @@
                         <label for="spayed">Spayed/Neutured:</label>
                     </div>
                     <div>
-                        <input type="checkbox">
-                        <input type="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" v-on:click="newPetInfo.house_trained=!newPetInfo.house_trained">
+                        <input type="checkbox" v-on:click="newPetInfo.vaccinations=!newPetInfo.vaccinations">
+                        <input type="checkbox" v-on:click="newPetInfo.spay_neuter=!newPetInfo.spay_neuter">
                     </div>
                 </div>
-                <button type="submit">Add!</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -66,13 +66,32 @@
             data: {
                 newPet: true,
                 newPetInfo: {
-                    
+                    pet_name: "",
+                    species: "",
+                    pet_gender: "",
+                    pet_age: "",
+                    house_trained: false,
+                    preferences: "",
+                    vaccinations: false,
+                    spay_neuter: false,
+                    coat_length: "",
+                    pet_size: "",
+                    pet_picture_url: ""
                 }
             },
             methods: {
                 addForm: function () {
                     this.newPet = !this.newPet
-                    console.log(this.newPet)
+                },
+                submit: function () {
+                    fetch("https://petswipedb.herokuapp.com/pet_info", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(this.newPetInfo)
+                    })
+                    console.log(this.newPetInfo)
                 }
             }
         })
