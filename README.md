@@ -16,7 +16,7 @@ Users who are adopters are given pet profiles, one at a time, and are able to li
 
 Pets that the adopter likes are stored in a favorites list where the adopter can see pet information and contact the adoptee's owners or caregivers via email.
 
-#Future features
+# Future features
 
 Improved Nomdemailer functionality.
 
@@ -26,6 +26,6 @@ Ability to filter pets by user defined properties.
 
 Knex, Postgress, Node.js, Vue, Nodemailer, and Express.
 
-#Created By
+# Created By
 
 Andrew Pedersen, Charity Van Buren, Evan Young,  Meredith Fontana, Max, and Lambchop
