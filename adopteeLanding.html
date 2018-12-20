@@ -77,6 +77,7 @@
             el: "#adoptee",
             data: {
                 petList: [],
+                allPets: [],
                 newPet: true,
                 newPetInfo: {
                     pet_name: "",
@@ -95,9 +96,8 @@
             /* Add below function to use Axios, this gets database and sets the above 'petList' array equal to the response */
             created: function () {
                 axios.get("https://petswipedb.herokuapp.com/pet_info").then(function (response) {
-                    adoptee.petList = response.data
+                    adoptee.allPets = response.data
                 })
-                .then(() => console.log(this.petList))
             },
 
             methods: {
@@ -113,6 +113,7 @@
                             body: JSON.stringify(this.newPetInfo)
                         })
                         .then(() => this.newPet = !this.newPet)
+                        .then(() => this.petList.push(this.newPetInfo))
                         .then(() => window.location = "./adopteeLanding.html")
                 },
                 deleteListing: function () {

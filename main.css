@@ -328,6 +328,74 @@
   font-family: "Encode Sans Condensed", sans-serif;
   font-size: 1rem;
 }
+.fullInfo .signUpForm {
+  border: solid black 1px;
+  border-radius: 1rem;
+  margin: 1rem;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  padding: 1rem;
+  width: 80%;
+}
+.fullInfo .signUpForm input {
+  border: solid black 1px;
+  float: right;
+}
+.fullInfo .signUpForm button {
+  border: solid black 1px;
+  width: 30vw;
+  height: 2rem;
+  border-radius: 1rem;
+  float: center;
+  background-color: white;
+  align-self: center;
+  font-size: 1rem;
+}
+.fullInfo .signUpForm button:hover {
+  cursor: pointer;
+}
+.fullInfo .signUpForm .about {
+  height: 10vh;
+  border: solid black 1px;
+  float: right;
+}
+@media (min-width: 1024px) {
+  .fullInfo .header {
+    font-size: 3rem;
+  }
+  .fullInfo p {
+    font-size: 2rem;
+  }
+  .fullInfo .signUpForm {
+    width: 60vw;
+    height: 90vh;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .fullInfo .signUpForm label {
+    font-size: 2rem;
+  }
+  .fullInfo .signUpForm input {
+    width: 60vw;
+    height: 2rem;
+    margin-right: 0rem;
+    font-size: 1.5rem;
+  }
+  .fullInfo .signUpForm button {
+    font-size: 1.5rem;
+    height: 2rem;
+    width: 12vw;
+  }
+  .fullInfo .signUpForm .about {
+    height: 10vh;
+    width: 50vw;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+}
 
 .favList {
   height: 100vh;
