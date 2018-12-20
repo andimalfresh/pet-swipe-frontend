@@ -334,6 +334,7 @@ $desktop: "(min-width: 1024px)";
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: $SansFont;
 
     h1 {
@@ -346,6 +347,30 @@ $desktop: "(min-width: 1024px)";
         width: 80vw;
         border: solid black 1px;
         border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+
+        .listing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .buttons {
+                display: flex;
+                justify-items: space-evenly;
+                button {
+                    height: 2rem;
+                    width: auto;
+                    font-size: 1rem;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 
     button {
