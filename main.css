@@ -191,7 +191,7 @@
 }
 
 /* Swipe styling */
-#swipe {
+.swipe {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -199,27 +199,47 @@
   align-items: center;
   font-family: "Encode Sans Condensed", sans-serif;
 }
-#swipe h1 {
+.swipe h1 {
   font-family: "Lobster", cursive;
   color: #ff0800;
 }
-#swipe .card {
+.swipe .card {
   height: 50%;
   width: 80%;
   border: solid black 1px;
   border-radius: 2rem;
 }
-#swipe .card img {
+.swipe .card img {
   border-radius: 2rem 2rem 0rem 0rem;
   height: 15rem;
   width: 100%;
 }
-#swipe .buttons {
+.swipe button {
+  height: 3rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border: solid black 1px;
+  color: white;
+  background-color: #ff0800;
+  border-radius: 0.5rem;
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+.swipe button:hover {
+  cursor: pointer;
+}
+.swipe .buttons {
   display: flex;
   flex-direction: row;
   align-content: center;
 }
-#swipe .buttons button {
+.swipe .buttons .no {
+  color: red;
+}
+.swipe .buttons .yes {
+  color: green;
+}
+.swipe .buttons button {
   height: 5rem;
   width: 5rem;
   border-radius: 2.5rem;
@@ -231,7 +251,7 @@
   margin-right: 2rem;
   text-align: center;
 }
-#swipe .menu {
+.swipe .menu {
   margin-top: 20%;
   height: 5.5rem;
   width: 105%;
@@ -240,7 +260,7 @@
   justify-content: space-evenly;
   flex-direction: row;
 }
-#swipe .menu .logo {
+.swipe .menu .logo {
   margin-top: 1rem;
   background-color: white;
   height: 3rem;
@@ -251,22 +271,95 @@
   align-content: center;
   border-radius: 1.5rem;
 }
-#swipe .menu .logo button {
+.swipe .menu .logo button {
   font-size: 2rem;
   padding: 0.5rem;
 }
 @media (min-width: 1024px) {
-  #swipe h1 {
+  .swipe h1 {
     font-size: 3rem;
   }
-  #swipe .card {
+  .swipe .card {
     height: 65vh;
     width: 50%;
     font-size: 2rem;
   }
-  #swipe .card img {
+  .swipe .card img {
     height: 80%;
   }
+}
+
+.fullInfo {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.fullInfo h1 {
+  font-family: "Lobster", cursive;
+  color: #ff0800;
+}
+.fullInfo .pet {
+  height: auto;
+  width: 80vw;
+  border: solid black 1px;
+  border-radius: 0.5rem;
+  font-family: "Encode Sans Condensed", sans-serif;
+  padding-top: 1rem;
+  align-content: center;
+  line-height: 0.5rem;
+}
+.fullInfo .pet img {
+  height: 10rem;
+  border-radius: 1rem;
+}
+.fullInfo .pet ul {
+  list-style-type: none;
+}
+.fullInfo button {
+  border: solid black 1px;
+  height: 2rem;
+  width: 8rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-family: "Encode Sans Condensed", sans-serif;
+  font-size: 1rem;
+}
+
+.favList {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+.favList h1 {
+  font-family: "Lobster", cursive;
+  color: #ff0800;
+}
+.favList .list {
+  height: auto;
+  width: 80vw;
+  border: solid black 1px;
+  display: flex;
+  flex-direction: column;
+}
+.favList .list .listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.favList button {
+  height: 3rem;
+  width: 7rem;
+  border: solid black 1px;
+  background-color: white;
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
 }
 
 /* Adoptee Sign-up */

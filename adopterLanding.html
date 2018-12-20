@@ -16,18 +16,57 @@
 
 <body>
     <div id="swipe">
-        <h1>PetSwipe</h1>
-        <div class="card" :id="petList[currentPet].id">
-            <img :src="petList[currentPet].pet_picture_url">
-            <h2 class="dogname">{{petList[currentPet].pet_name}}</h2>
+        <div v-if="likedList===1" class="swipe">
+            <h1>PetSwipe</h1>
+            <div class="card" :id="petList[currentPet].id" v-on:click="showFull($event)">
+                <img :src="petList[currentPet].pet_picture_url">
+                <h2 class="dogname">{{petList[currentPet].pet_name}}</h2>
+            </div>
+            <div class="buttons">
+                <button v-on:click="swipe">
+                    <i class="fas fa-times no"></i>
+                </button>
+                <button v-on:click="like">
+                    <i class="fas fa-heart yes"></i>
+                </button>
+            </div>
+            <button v-on:click="listLikes">Liked Pets</button>
         </div>
-        <div class="buttons">
-            <button v-on:click="swipe">
-                <i class="fas fa-times"></i>
-            </button>
-            <button v-on:click="like">
-                <i class="fas fa-heart"></i>
-            </button>
+        <div v-else-if="likedList===2" class="favList">
+            <h1>PetSwipe</h1>
+            <h2>Liked Animals:</h2>
+            <div class="list">
+                <div class="listItem" v-for="pet in favorites" :id="pet.id" v-on:click="showFull($event)">
+                    <h3>{{pet.pet_name}}</h3>
+                    <h4>({{pet.species}})</h4>
+                </div>
+            </div>
+            <button v-on:click="toSwipe">Back to Swiping</button>
+        </div>
+        <div v-else-if="likedList===3" class="fullInfo">
+            <div v-if="contact">
+                <h1>PetSwipe</h1>
+                <div class="pet">
+                    <img :src="petList[selected-1].pet_picture_url">
+                    <h2><u>Name: {{petList[selected-1].pet_name}}</u></h2>
+                    <h3>{{petList[selected-1].species}}</h3>
+                    <h4>Age: {{petList[selected-1].pet_age}}</h4>
+                    <h4>Gender: {{petList[selected-1].pet_gender}}</h4>
+                    <h4>Size: {{petList[selected-1].pet_size}}</h4>
+                    <h4 v-if="petList[selected-1].coat_length !='none'">Coat Length:
+                        {{petList[selected-1].coat_length}}</h4>
+                    <h4 v-if="petList[selected-1].preferences !='none'">Preferences:
+                        {{petList[selected-1].preferences}}</h4>
+                    <h4><u>Additional:</u></h5>
+                        <h5 v-if="petList[selected-1].vaccinations">Vaccinated</h5>
+                        <h5 v-if="petList[selected-1].spay_neuter">Spayed/Neutured</h5>
+                        <h5 v-if="petList[selected-1].house_trained">House Trained</h5>
+                </div>
+                <button>Contact Owner:</button>
+            </div>
+            <div v-else>
+                
+            </div>
         </div>
     </div>
 
@@ -38,7 +77,11 @@
             data: {
                 petList: [],
                 currentPet: 0,
-                favorites: []
+                favorites: [],
+                likedList: 1,
+                fullPet: true,
+                selected: 0,
+                contact: true
             },
             created: function () {
                 axios.get("https://petswipedb.herokuapp.com/pet_info").then(function (response) {
@@ -47,14 +90,25 @@
                     .then(() => console.log(this.petList))
             },
             methods: {
-                like: function() {
-                    this.currentPet ++
-                    this.favorites.push(this.petList[this.currentPet-1])
+                like: function () {
+                    this.currentPet++
+                    this.favorites.push(this.petList[this.currentPet - 1])
                     console.log(this.favorites)
                 },
-                swipe: function() {
-                    this.currentPet ++
-                }
+                swipe: function () {
+                    this.currentPet++
+                },
+                listLikes: function () {
+                    this.likedList = 2
+                },
+                toSwipe: function () {
+                    this.likedList = 1
+                },
+                showFull: function (event) {
+                    this.likedList = 3,
+                        this.selected = event.currentTarget.id;
+                    console.log(this.selected)
+                },
             }
         })
     </script>
