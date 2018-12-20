@@ -17,15 +17,15 @@
 <body>
     <div id="swipe">
         <h1>PetSwipe</h1>
-        <div class="card">
+        <div class="card" :id="petList[currentPet].id">
             <img :src="petList[currentPet].pet_picture_url">
             <h2 class="dogname">{{petList[currentPet].pet_name}}</h2>
         </div>
         <div class="buttons">
-            <button>
+            <button v-on:click="swipe">
                 <i class="fas fa-times"></i>
             </button>
-            <button v-on:click="swipe">
+            <button v-on:click="like">
                 <i class="fas fa-heart"></i>
             </button>
         </div>
@@ -37,7 +37,8 @@
             el: "#swipe",
             data: {
                 petList: [],
-                currentPet: 0
+                currentPet: 0,
+                favorites: []
             },
             created: function () {
                 axios.get("https://petswipedb.herokuapp.com/pet_info").then(function (response) {
@@ -46,6 +47,11 @@
                     .then(() => console.log(this.petList))
             },
             methods: {
+                like: function() {
+                    this.currentPet ++
+                    this.favorites.push(this.petList[this.currentPet-1])
+                    console.log(this.favorites)
+                },
                 swipe: function() {
                     this.currentPet ++
                 }
