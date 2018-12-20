@@ -114,6 +114,10 @@
                         })
                         .then(() => this.newPet = !this.newPet)
                         .then(() => window.location = "./adopteeLanding.html")
+                },
+                deleteListing: function () {
+                    fetch("https://petswipedb.herokuapp.com/pet_info", {
+                    })
                 }
             }
         })
