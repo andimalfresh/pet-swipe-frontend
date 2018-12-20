@@ -238,7 +238,7 @@ $desktop: "(min-width: 1024px)";
 }
 
 /* Swipe styling */
-#swipe {
+.swipe {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -264,10 +264,34 @@ $desktop: "(min-width: 1024px)";
         }
     }
 
+    button {
+        height: 3rem;
+        width: 8rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        border: solid black 1px;
+        color: white;
+        background-color: $primary;
+        border-radius: .5rem;
+        font-family: $SansFont;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
     .buttons {
         display: flex;
         flex-direction: row;
         align-content: center;
+
+        .no {
+            color: red;
+        }
+
+        .yes {
+            color: green;
+        }
 
         button {
             height: 5rem;
@@ -327,6 +351,90 @@ $desktop: "(min-width: 1024px)";
             }
         }
     }
+
+}
+
+.fullInfo {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    h1 {
+        font-family: $logo;
+        color: $primary;
+    }
+
+    .pet {
+        height: auto;
+        width: 80vw;
+        border: solid black 1px;
+        border-radius: .5rem;
+        font-family: $SansFont;
+        padding-top: 1rem;
+        align-content: center;
+        line-height: .5rem;
+
+        img {
+            height: 10rem;
+            border-radius: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    }
+
+    button {
+        border: solid black 1px;
+        height: 2rem;
+        width: 8rem;
+        margin-top: 1rem;
+        border-radius: .5rem;
+        background-color: white;
+        font-family: $SansFont;
+        font-size: 1rem;
+    }
+}
+
+.favList {
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-family: $logo;
+        color: $primary;
+    }
+
+    .list {
+        height: auto;
+        width: 80vw;
+        border: solid black 1px;
+        display: flex;
+        flex-direction: column;
+
+        .listItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+
+    button {
+        height: 3rem;
+        width: 7rem;
+        border: solid black 1px;
+        background-color: white;
+        font-size: 1rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
+    }
+
 }
 
 /* Adoptee Sign-up */
@@ -351,7 +459,7 @@ $desktop: "(min-width: 1024px)";
         display: flex;
         flex-direction: column;
         text-align: center;
-        
+
 
         .listing {
             display: flex;
@@ -361,6 +469,7 @@ $desktop: "(min-width: 1024px)";
             .buttons {
                 display: flex;
                 justify-items: space-evenly;
+
                 button {
                     height: 2rem;
                     width: auto;
