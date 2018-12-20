@@ -62,10 +62,44 @@
                         <h5 v-if="petList[selected-1].spay_neuter">Spayed/Neutured</h5>
                         <h5 v-if="petList[selected-1].house_trained">House Trained</h5>
                 </div>
-                <button>Contact Owner:</button>
+                <button v-on:click="email">Contact Owner</button>
+                <button v-on:click="toSwipe">Back</button>
             </div>
             <div v-else>
-                
+                <div id="form">
+                    <h1 class="header">PetSwipe</h1>
+                    <p>
+                        Contact Owner
+                    </p>
+                    <form class="signUpForm">
+                        <div>
+                            <label for="name">Name:</label>
+                            <input v-model="newUser.name">
+                        </div>
+                        <div>
+                            <label for="pet_name">Pet Name:</label>
+                            <input v-model="newUser.pet_name">
+                        </div>
+                        <div>
+                            <label for="location">Location:</label>
+                            <input v-model="newUser.location_city">
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" v-model="newUser.contact_email">
+                        </div>
+                        <div>
+                            <label for="phonenumber">Phone Number:</label>
+                            <input v-model="newUser.phonenumber">
+                        </div>
+                        <div>
+                            <label for="about" type="text" cols="40" rows="7">Message:</label>
+                            <textarea class="about" value="text" v-model="newUser.message"></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <button v-on:click="email">Back</button>
+                </div>
             </div>
         </div>
     </div>
@@ -81,7 +115,16 @@
                 likedList: 1,
                 fullPet: true,
                 selected: 0,
-                contact: true
+                contact: true,
+                newUser: {
+                    name: "",
+                    pet_name: "",
+                    email: "",
+                    location_city: "",
+                    phonenumber: "",
+                    message: "",
+                }
+
             },
             created: function () {
                 axios.get("https://petswipedb.herokuapp.com/pet_info").then(function (response) {
@@ -109,6 +152,18 @@
                         this.selected = event.currentTarget.id;
                     console.log(this.selected)
                 },
+                email: function () {
+                    this.contact = !this.contact
+                },
+                submit: function () {
+                    fetch("https://petswipemailer.herokuapp.com/send", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(this.newUser)
+                    })
+                }
             }
         })
     </script>
