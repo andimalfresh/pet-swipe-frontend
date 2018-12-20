@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Lobster" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- add script source below to include Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -17,6 +20,7 @@
         <div class="currentPets" v-if="newPet">
             <h2>Your Pets:</h2>
             <div class="list" v-if="petList.length > 0">
+                <!-- Below runs a Vue for loop for every animal in the petList array stored in Vue data at the bottom of the page -->
                 <h3 v-for="pet in petList">{{pet.pet_name}}</h3>
             </div>
             <button v-on:click="addForm">Add a pet</button>
@@ -80,6 +84,13 @@
                     pet_picture_url: ""
                 }
             },
+            /* Add below function to use Axios, this gets database and sets the above 'petList' array equal to the response */
+            created: function() {
+                axios.get("https://petswipedb.herokuapp.com/pet_info").then(function (response){
+                    adoptee.petList = response.data
+                })
+            },
+            
             methods: {
                 addForm: function () {
                     this.newPet = !this.newPet
