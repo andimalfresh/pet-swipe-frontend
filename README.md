@@ -1,6 +1,6 @@
 # PetSwipe
 
-PetSwipe is a mobile app that assists people in finding pets and pets in finding homes.
+PetSwipe is a mobile app that assists people in finding pets and pets in finding homes. The app has feathures that serve the needs of both those trying to adopt a pet and those trying to find a new home for a pet.
 
 # User Experience
 
@@ -29,3 +29,19 @@ Knex, Postgress, Node.js, Vue, Nodemailer, and Express.
 # Created By
 
 Andrew Pedersen, Charity Van Buren, Evan Young,  Meredith Fontana, Max, and Lambchop
+
+# Front-end on Github
+
+https://github.com/andimalfresh/pet-swipe-frontend
+
+# Back-end on Github
+
+https://github.com/andimalfresh/pet-swipe-backend
+
+# Back-end deployed
+
+https://petswipedb.herokuapp.com/
+
+# Front-end deployed
+
+http://petswipe.surge.sh/index.html
