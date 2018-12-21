@@ -16,7 +16,7 @@ Users who are adopters are given pet profiles, one at a time, and are able to li
 
 Pets that the adopter likes are stored in a favorites list where the adopter can see pet information and contact the adoptee's owners or caregivers via email.
 
-# Future features
+# Future Features
 
 Improved Nomdemailer functionality.
 
@@ -38,10 +38,14 @@ https://github.com/andimalfresh/pet-swipe-frontend
 
 https://github.com/andimalfresh/pet-swipe-backend
 
-# Back-end deployed
+# Back-end Deployed
 
 https://petswipedb.herokuapp.com/
 
-# Front-end deployed
+# Front-end Deployed
 
 http://petswipe.surge.sh/index.html
+
+# To Install
+
+Npm, Express, Nodemon, BodyParsers, Cors, Knex, Node, WebMailer, Postgress
